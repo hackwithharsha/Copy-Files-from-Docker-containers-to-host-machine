@@ -14,3 +14,11 @@
 
 >>> docker cp container_id:app/file.log file.log
 ````
+
+## clean worker containers
+
+```bash
+>>> docker stop $(docker ps -a | grep worker | cut -d ' ' -f1)
+
+>>> docker rm $(docker ps -a | grep worker | cut -d ' ' -f1)
+```
